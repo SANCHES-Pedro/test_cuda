@@ -11,7 +11,7 @@ cat > test_gpu.py << EOF
 import torch
 import os
 for i in range(4):
-        os.environ["CUDA_DEVICE_ORDER"]=f"{i}"
+        os.environ["CUDA_VISIBLE_DEVICES"]=f"{i}"
         assert torch.cuda.is_available() == True, f"Cuda is NOT available for GPU number {i}"
 print("Complete: all GPUs are working")
 
